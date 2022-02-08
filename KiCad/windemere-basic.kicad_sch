@@ -11,7 +11,7 @@
     (company "Matt Rude <matt@mattrude.com>")
     (comment 1 "6502 computer with LCD screen and 20 button keypad")
     (comment 2 "Memory Map:  RAM: $0000 - $5fff,  65c22: $6000 - $600f,  ROM: $8000 - $ffff")
-    (comment 5 "https://github.com/mattrude/wd65c02")
+    (comment 5 "https://github.com/mattrude/windemere-basic")
   )
 
   (lib_symbols
