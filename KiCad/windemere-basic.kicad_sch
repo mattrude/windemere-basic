@@ -5725,7 +5725,7 @@
     (property "Value" "WD65C02" (id 1) (at 46.99 44.45 0)
       (effects (font (size 1.524 1.524)))
     )
-    (property "Footprint" "6502-Build:DIP-40_6502" (id 2) (at 34.29 66.04 0)
+    (property "Footprint" "Package_DIP:DIP-40_W15.24mm" (id 2) (at 34.29 66.04 0)
       (effects (font (size 1.524 1.524)) hide)
     )
     (property "Datasheet" "" (id 3) (at 34.29 66.04 0)
@@ -6414,7 +6414,7 @@
     (property "Value" "1k" (id 1) (at 58.928 147.447 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
-    (property "Footprint" "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal" (id 2) (at 55.372 148.59 90)
+    (property "Footprint" "Resistor_THT:R_Axial_DIN0204_L3.6mm_D1.6mm_P7.62mm_Horizontal" (id 2) (at 55.372 148.59 90)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Datasheet" "~" (id 3) (at 57.15 148.59 0)
@@ -7061,7 +7061,7 @@
       (reference "R6") (unit 1) (value "100K") (footprint "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal")
     )
     (path "/ce736e65-66e4-4a77-a33d-4fcadf989038"
-      (reference "R7") (unit 1) (value "1k") (footprint "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal")
+      (reference "R7") (unit 1) (value "1k") (footprint "Resistor_THT:R_Axial_DIN0204_L3.6mm_D1.6mm_P7.62mm_Horizontal")
     )
     (path "/147aafce-eefa-40b0-bbcc-357bc9c489cd"
       (reference "RV1") (unit 1) (value "10K") (footprint "Potentiometer_THT:Potentiometer_Bourns_3296W_Vertical")
@@ -7073,7 +7073,7 @@
       (reference "SW2") (unit 1) (value "Push_Button") (footprint "Button_Switch_THT:SW_DIP_SPSTx01_Slide_9.78x4.72mm_W7.62mm_P2.54mm")
     )
     (path "/6139204c-53ef-44fa-93ff-2d6092722952"
-      (reference "U1") (unit 1) (value "WD65C02") (footprint "6502-Build:DIP-40_6502")
+      (reference "U1") (unit 1) (value "WD65C02") (footprint "Package_DIP:DIP-40_W15.24mm")
     )
     (path "/d218171f-2b8a-4061-9bea-fd463a7d5174"
       (reference "U2") (unit 1) (value "28C256") (footprint "Package_DIP:DIP-28_W15.24mm")
