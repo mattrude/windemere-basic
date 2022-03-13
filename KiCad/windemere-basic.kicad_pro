@@ -33,9 +33,9 @@
         "other_text_thickness": 0.15,
         "other_text_upright": false,
         "pads": {
-          "drill": 3.0,
-          "height": 3.5,
-          "width": 3.5
+          "drill": 0.0,
+          "height": 5.6,
+          "width": 5.6
         },
         "silk_line_width": 0.15,
         "silk_text_italic": false,
@@ -376,10 +376,10 @@
   },
   "pcbnew": {
     "last_paths": {
-      "gencad": "",
+      "gencad": "windemere-basic.cad",
       "idf": "",
       "netlist": "./",
-      "specctra_dsn": "",
+      "specctra_dsn": "windemere-basic.dsn",
       "step": "",
       "vrml": ""
     },
