@@ -1,2 +1,2 @@
-# Windemere 1
+# Windemere Basic 6502 Computer
 
