@@ -77,7 +77,7 @@
 ; -----------------------------------------------------------------------------
 ;   License
 ;
-; MIT No Attribution
+; MIT No Attribution License
 ;
 ; Copyright (c) 2022 Matt Rude
 ; 
