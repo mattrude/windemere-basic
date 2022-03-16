@@ -1,4 +1,21 @@
-# Compiling from Source
+# Installion
+
+## Install Needed Tools
+
+On a Ubuntu system, run:
+
+    sudo apt-get install build-essential pkg-config git libusb-1.0-0-dev
+
+Once the needed packets are installed, run the below to install vasm & minipro
+
+    cd && rm -rf vasm && wget -c http://sun.hasenbraten.de/vasm/release/vasm.tar.gz && \
+    tar -xzf vasm.tar.gz && cd vasm/ && make CPU=6502 SYNTAX=oldstyle && \
+    cp vasm6502_oldstyle /usr/local/bin/ && \
+    cd && rm -rf minipro && git clone https://gitlab.com/DavidGriffith/minipro.git && \
+    cd minipro && make && sudo make install && cd && \
+    echo '' && echo "Installion Complete!"
+
+## Compiling from Source
 
 This source file expects the use of the [vasm compiler](http://www.compilers.de/vasm.html) found at: http://sun.hasenbraten.de/vasm/
 
