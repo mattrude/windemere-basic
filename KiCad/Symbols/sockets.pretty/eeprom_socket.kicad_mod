@@ -1,6 +1,6 @@
 (footprint "eeprom_socket" (version 20211014) (generator pcbnew)
   (layer "F.Cu")
-  (tedit 62324B2A)
+  (tedit 62324E18)
   (descr "28-lead though-hole mounted DIP package, row spacing 15.24 mm (600 mils)")
   (tags "THT DIP DIL PDIP 2.54mm 15.24mm 600mil")
   (property "Digikey Part" "AT28C256-15PU-ND")
@@ -64,7 +64,7 @@
   (pad "27" thru_hole oval (at 17.125654 8.777757) (size 1.6 1.6) (drill 0.8) (layers *.Cu *.Mask) (tstamp 30808afe-e7ac-4510-971b-6c9fba14bfde))
   (pad "28" thru_hole oval (at 17.125654 6.237757) (size 1.6 1.6) (drill 0.8) (layers *.Cu *.Mask) (tstamp f1be1bbf-1a12-4a19-bb5a-e857e50e15d2))
   (model "${KICAD6_3DMODEL_DIR}/Package_DIP.3dshapes/DIP-28_W15.24mm.wrl"
-    (offset (xyz 0 0 0))
+    (offset (xyz 2 -6 0))
     (scale (xyz 1 1 1))
     (rotate (xyz 0 0 0))
   )
