@@ -1,0 +1,25 @@
+Qty,Reference(s),Value,Digikey Part,Datasheet
+1,BZ1,Buzzer,102-1156-ND,https://www.cuidevices.com/product/resource/cem-1212s.pdf
+1,C1,1µF,493-11321-3-ND,https://www.nichicon.co.jp/english/products/pdfs/e-ups.pdf
+1,C2,0.1uF,399-9877-1-ND,http://www.kemet.com/Lists/ProductCatalog/Attachments/598/KEM_C1050_GOLDMAX_X7R.pdf
+2,"C3, C6",0.1uF,399-9877-1-ND,http://www.kemet.com/Lists/ProductCatalog/Attachments/598/KEM_C1050_GOLDMAX_X7R.pdf
+2,"C4, C5",1uF,399-13743-1-ND,https://api.kemet.com/component-edge/download/datasheet/C322C105K5R5TA91707301.pdf
+1,D1,1N5819,1N5819GOS-ND,https://www.onsemi.com/pdf/datasheet/1n5817-d.pdf
+1,D2,LED_Red,160-1087-ND,https://media.digikey.com/pdf/Data%20Sheets/Lite-On%20PDFs/LTL-10223W.pdf
+4,"D3, D4, D5, D6",1N914,1N914FS-ND,https://rocelec.widen.net/view/pdf/bhc41r7lwc/ONSM-S-A0003539415-1.pdf?t.download=true&u=5oefqw
+1,J1,Barrel_Jack,CP-018H-ND,https://www.cuidevices.com/product/resource/pj-018h.pdf
+1,J2,Connector,732-5310-ND,https://www.we-online.com/katalog/datasheet/6130xx21121.pdf
+20,"KB1, KB2, KB3, KB4, KB5, KB6, KB7, KB8, KB9, KB10, KB11, KB12, KB13, KB14, KB15, KB16, KB17, KB18, KB19, KB20",Push_Button,CH162-ND,https://media.digikey.com/pdf/Data%20Sheets/Cherry%20PDFs/MX%20Series.pdf
+2,"R1, R2",1K,CF14JT1K00CT-ND,https://www.seielect.com/catalog/sei-cf_cfm.pdf
+2,"R3, R8",1K,CF14JT1K00CT-ND,https://www.seielect.com/catalog/sei-cf_cfm.pdf
+4,"R4, R5, R6, R7",100K,CF14JT100KCT-ND,https://www.seielect.com/catalog/sei-cf_cfm.pdf
+1,RV1,10K,490-2875-ND,https://www.bourns.com/docs/Product-Datasheets/pv36.pdf
+1,SW2,Push_Button,401-1978-ND,https://www.ckswitches.com/media/1341/d6.pdf
+1,U1,L7805,497-1443-5-ND,http://www.st.com/content/ccc/resource/technical/document/datasheet/41/4f/b3/b0/12/d4/47/88/CD00000444.pdf/files/CD00000444.pdf/jcr:content/translations/en.CD00000444.pdf
+1,U2,74HC00,2156-CD74HC00E-HC-ND,http://www.ti.com/lit/gpn/sn74hc00
+1,U4,28C256,AT28C256-15PU-ND,http://ww1.microchip.com/downloads/en/DeviceDoc/doc0006.pdf
+1,U5,62256,1450-1033-ND,http://ww1.microchip.com/downloads/en/DeviceDoc/doc0006.pdf
+1,U7,MM74C922,MM74C922N-ND,http://www.ti.com/lit/gpn/snMM74C922
+1,U8,HD44780U,2470-ACM1602KC-NLW-BBW-R-ND,http://www.vishay.com/docs/37299/37299.pdf
+1,U9,MCP102-475,MCP102-475E/TO-ND,http://ww1.microchip.com/downloads/en/DeviceDoc/11187f.pdf
+1,X1,1MHz,X937-ND,https://ecsxtal.com/store/pdf/ecs-100x.pdf
