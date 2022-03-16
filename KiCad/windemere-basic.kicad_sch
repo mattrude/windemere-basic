@@ -7879,7 +7879,7 @@
     (property "Reference" "SW2" (id 0) (at 187.96 31.75 90)
       (effects (font (size 1.27 1.27)) (justify right))
     )
-    (property "Value" "Push_Button" (id 1) (at 186.69 31.7499 90)
+    (property "Value" "Reset Button" (id 1) (at 186.69 31.7499 90)
       (effects (font (size 1.27 1.27)) (justify right) hide)
     )
     (property "Footprint" "footprints:D6R90F1LFS" (id 2) (at 187.96 30.48 0)
@@ -7904,7 +7904,7 @@
     (property "Value" "28C256" (id 1) (at 95.25 44.45 0)
       (effects (font (size 1.524 1.524)) (justify left))
     )
-    (property "Footprint" "Package_DIP:DIP-28_W15.24mm" (id 2) (at 95.25 71.12 0)
+    (property "Footprint" "sockets:eeprom_socket" (id 2) (at 95.25 71.12 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Datasheet" "http://ww1.microchip.com/downloads/en/DeviceDoc/doc0006.pdf" (id 3) (at 95.25 71.12 0)
@@ -8648,7 +8648,7 @@
       (reference "SW1") (unit 1) (value "SW_SPDT") (footprint "Button_Switch_THT:SW_E-Switch_EG1271_DPDT")
     )
     (path "/cee2649a-819a-40cb-8cce-25f9ff3a4017"
-      (reference "SW2") (unit 1) (value "Push_Button") (footprint "footprints:D6R90F1LFS")
+      (reference "SW2") (unit 1) (value "Reset Button") (footprint "footprints:D6R90F1LFS")
     )
     (path "/af950b64-290c-45ec-af5b-2091c768d43e"
       (reference "U1") (unit 1) (value "L7805") (footprint "Package_TO_SOT_THT:TO-220-3_Horizontal_TabDown")
@@ -8669,7 +8669,7 @@
       (reference "U3") (unit 1) (value "WD65C02") (footprint "Package_DIP:DIP-40_W15.24mm")
     )
     (path "/d218171f-2b8a-4061-9bea-fd463a7d5174"
-      (reference "U4") (unit 1) (value "28C256") (footprint "Package_DIP:DIP-28_W15.24mm")
+      (reference "U4") (unit 1) (value "28C256") (footprint "sockets:eeprom_socket")
     )
     (path "/40f344b6-38d5-4cfc-82df-1f570acc5b8b"
       (reference "U5") (unit 1) (value "62256") (footprint "Package_DIP:DIP-28_W15.24mm")
