@@ -64,6 +64,6 @@ To compile this code, run a command similer to:
 
 ## System Images
 
-![Schematic](KiCad/windemere-basic.svg)
+![Schematic](Docs/windemere-basic.svg)
 
-![PCB](KiCad/windemere-basic.png)
+![PCB](Docs/windemere-basic.png)
