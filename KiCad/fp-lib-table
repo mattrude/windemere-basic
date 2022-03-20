@@ -1,4 +1,0 @@
-(fp_lib_table
-  (lib (name "footprints")(type "KiCad")(uri "C:/Users/Owner/Downloads/KiCAD/2022-03-16_02-05-15/footprints.pretty")(options "")(descr ""))
-  (lib (name "sockets")(type "KiCad")(uri "${KIPRJMOD}/Symbols/sockets.pretty")(options "")(descr ""))
-)
