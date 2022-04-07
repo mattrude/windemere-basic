@@ -173,12 +173,12 @@ t1_timer:       ldx #0                  ; Zero out the X index
                 sta tocks               ; Zero out the tocks memory location
                 lda #$40          	    ; Set the Countdown Timer 1 to One-Shot
                 sta ACR                 ; Store timer 1 to Aux Control Register
-                lda #$0e
-                sta TCL1
+                lda #$0e                ; Set timer 1 to trigger every
+                sta TCL1                ;   0.25 seconds.
                 lda #$27
                 sta TCH1
-                lda #%11000000
-                sta IER
+                lda #%11000000          ; Enable IRQs & Timer 1 on w65c02
+                sta IER                 ; Store to Interrupt Enable Register
 cpu_checker:    sed                     ; set decimal mode
                 clc                     ; clear carry for add
                 lda #$99                ; actually 99 decimal in this case   
