@@ -126,9 +126,9 @@ IER   = $600e               ; W65C22 Interrupt Enable Register
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;           HD44780U LCD Display Controller                                   ;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-EN = %10000000              ; HD44780U LCD Starts data read/write
-RW = %01000000              ; HD44780U LCD Enables Screen to read data
-RS = %00100000              ; HD44780U LCD Registers Select
+EN = $80                    ; HD44780U LCD Starts data read/write
+RW = $40                    ; HD44780U LCD Enables Screen to read data
+RS = $20                    ; HD44780U LCD Registers Select
 
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -136,32 +136,32 @@ RS = %00100000              ; HD44780U LCD Registers Select
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
                 .org $8000              ; Start at memory location 8000 hex
 ;;; Configure the stack
-boot:           ldx #$ff                ; Set the stack pointer to the end of the stack
+boot:           ldx #$ff                ; Set the stack pointer
                 txs
 reset:          sei                     ; Disable CPU Interrupts
                 cld			            ; clear decimal mode
                 clc			            ; clear carry bit
                 ldx #0                  ; Start the Index X at zero
                 ldy #0                  ; Start the Index Y at zero
-Initialize_LCD: lda #%11111111          ; Set all pins on port "B" to output
+Initialize_LCD: lda #$ff          	    ; Set all pins on port "B" to output
                 sta DDRB
-                lda #%11100001          ; Set top 3 pins & last pin on port "A" to output
+                lda #$e1          	    ; top 3 pins/last, port "A" to output
                 sta DDRA
-                lda #%00111000          ; Set 8-bit mode; 2-line display; 5x8 font
+                lda #$38	            ; 8-bit mode; 2-line display; 5x8 font
                 jsr lcd_config
-                lda #%00001100          ; Display on; cursor on; blink off
+                lda #$c          	    ; Display on; cursor on; blink off
                 jsr lcd_config
-                lda #%00000110          ; Increment and shift cursor; don't shift display
+                lda #$6          	    ; Increment and shift cursor
                 jsr lcd_config
-                lda #%00000001          ; Clear the LCD display
+                lda #$11          	    ; Clear the LCD display
                 jsr lcd_config
-                lda #%00000010          ; Send cursor to line 1; home position
+                lda #$2          	    ; Send cursor to line 1
                 jsr lcd_config
-print_boot:     lda boot_message, x     ; load the first/next character into accumulator
+print_boot:     lda boot_message, x     ; load the first/next character into A
                 beq t1_timer            ; Jump to loop, if accumulator is $00
-                jsr print_char          ; Assuming above didn't happen, jump to print_char
+                jsr print_char          ; If not, jump to print_char
                 inx                     ; Increment the Index X
-                jmp print_boot          ; jump back to the top of print subroutine
+                jmp print_boot          ; jump back to the top of print_boot
 t1_timer:       ldx #0                  ; Zero out the X index
                 lda #0                  ; Zero out the accumulator
                 sta ticks               ; Zero out the ticks memory location
@@ -171,8 +171,8 @@ t1_timer:       ldx #0                  ; Zero out the X index
                 sta ticks + 4           ; Zero out the ticks-4 memory location
                 sta ticks + 5           ; Zero out the ticks-5 memory location
                 sta tocks               ; Zero out the tocks memory location
-                lda #%01000000          ; Set the Countdown Timer 1 to One-Shot Mode
-                sta ACR                 ; Store timer 1 to Auxiliary Control Register
+                lda #$40          	    ; Set the Countdown Timer 1 to One-Shot
+                sta ACR                 ; Store timer 1 to Aux Control Register
                 lda #$0e
                 sta TCL1
                 lda #$27
@@ -196,11 +196,11 @@ ready:          lda #%00000001          ; Clear the LCD display
                 lda #%00000010          ; Send cursor to line 1; home position
                 jsr lcd_config          ; Jump to the lcd_config subroutine
                 ldx #0                  ; Set the X Index to zero
-lcd_ready:      lda ready_message, x    ; load the first/next character into accumulator
+lcd_ready:      lda ready_message, x    ; load the first/next character into A
                 beq reset_end           ; Jump to loop, if accumulator is $00
-                jsr print_char          ; Assuming above didn't happen, jump to print_char
+                jsr print_char          ; If not, jump to print_char
                 inx                     ; Increment the Index X
-                jmp lcd_ready           ; jump back to the top of print subroutine
+                jmp lcd_ready           ; jump back to the top of lcd_ready
 reset_end:      cli                     ; Enable CPU Interupts
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -220,7 +220,7 @@ lcd_config:     jsr lcd_wait            ; Jump to the lcd_wait subroutine
                 sta PORTB
                 lda #0                  ; Clear LCD RS/RW/EN bits
                 sta PORTA
-                lda #EN                 ; Set LCD EN (enable) bit to send instruction
+                lda #EN                 ; Set LCD EN (enable) bit
                 sta PORTA
                 lda #0                  ; Clear LCD RS/RW/EN bits
                 sta PORTA
@@ -231,9 +231,9 @@ lcd_config:     jsr lcd_wait            ; Jump to the lcd_wait subroutine
 ;   LCD Print Character subroutine
 print_char:     jsr lcd_wait            ; Jump to the lcd_wait subroutine
                 sta PORTB
-                lda #RS                 ; Set LCD RS (Registers Select); Clear RW/EN bits
+                lda #RS                 ; Set LCD RS; Clear RW/EN bits
                 sta PORTA
-                lda #(RS | EN)          ; Set LCD EN (enable) bit to send instruction
+                lda #(RS | EN)          ; Set LCD EN (enable) bit
                 sta PORTA
                 lda #RS                 ; Clear LCD EN (enable) bits
                 sta PORTA
@@ -251,7 +251,7 @@ lcd_busy:       lda #RW                 ; Set port to Read/Write
                 sta PORTA               ; Load the setting to Port "A"
                 lda PORTB               ; Load Accumulator with Port "B"
                 and #%10000000          ; Combine the above with $80
-                bne lcd_busy            ; Jump back to the top of lcd_busy subroutine
+                bne lcd_busy            ; Jump back to the top of lcd_busy
                 lda #RW                 ; Set port to Read/Write
                 sta PORTA               ; Load the setting to Port "A"
                 lda #%11111111          ; Port B is output
@@ -278,7 +278,7 @@ irq:            pha                     ; Save accumulator
                 pha                     ; Save X-register
                 tya
                 pha                     ; Save Y-register
-                cld                     ; Enable binary mode / clear decimal flag
+                cld                     ; Enable binary mode/clear decimal flag
 irq_part_1:     bit TCL1
                 inc ticks
                 bne irq_part_2
