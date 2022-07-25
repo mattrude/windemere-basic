@@ -1,4 +1,6 @@
-# Installion
+# README
+
+Before we are able to compile the source code, you will need to install [vasm](http://sun.hasenbraten.de/vasm/) to compile the source code, and [minipro](https://gitlab.com/DavidGriffith/minipro) to burn the compiled code to the EEPROM.
 
 ## Install Needed Tools
 
