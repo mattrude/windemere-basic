@@ -1,5 +1,7 @@
 # Windemere Basic 6502 Computer
 
+This is a proof of concept project to build a MOS 6502 computer from scratch. 
+
 ## About
 
                  ┌───────────────────────────┐
