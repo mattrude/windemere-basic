@@ -1,0 +1,5 @@
+(sym_lib_table
+  (lib (name "65xx-mdr")(type "KiCad")(uri "${KIPRJMOD}/Symbols/65xx-mdr.kicad_sym")(options "")(descr ""))
+  (lib (name "HD44780U")(type "KiCad")(uri "${KIPRJMOD}/Symbols/HD44780U.kicad_sym")(options "")(descr ""))
+  (lib (name "Memory_RAM")(type "KiCad")(uri "${KIPRJMOD}/Symbols/Memory_RAM.kicad_sym")(options "")(descr ""))
+)
