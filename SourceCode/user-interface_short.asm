@@ -1,5 +1,6 @@
-;   File: user-interface_short
-;   Owner: Matt Rude <matt@mattrude.com>
+;   File: user-interface_short.asm
+;   Author: Matt Rude <matt@mattrude.com>
+;   URL: https://github.com/mattrude/windemere-basic
 ;   Date: 2022-01-22
 ;   Version: 0.1.0a
 ;
