@@ -3320,6 +3320,7 @@
     )
   )
 
+
   (junction (at 19.05 66.04) (diameter 0) (color 0 0 0 0)
     (uuid 0449c196-b50c-44a5-a416-c73bd9b864bb)
   )
@@ -8192,7 +8193,7 @@
   (symbol (lib_id "dk_Sockets-for-ICs-Transistors:A_40-LC-TT") (at 313.69 82.55 0) (unit 1)
     (in_bom yes) (on_board no) (fields_autoplaced)
     (uuid 749d5478-5876-4686-be3d-710d89412586)
-    (property "Reference" "J?" (id 0) (at 313.69 53.34 0))
+    (property "Reference" "J5" (id 0) (at 313.69 53.34 0))
     (property "Value" "A_40-LC-TT" (id 1) (at 313.69 55.88 0))
     (property "Footprint" "digikey-footprints:Socket_DIP-40_15.24mm_Conn" (id 2) (at 318.77 77.47 0)
       (effects (font (size 1.524 1.524)) (justify left) hide)
@@ -8330,7 +8331,7 @@
   (symbol (lib_id "dk_Sockets-for-ICs-Transistors:A_28-LC-TT") (at 297.18 137.16 0) (unit 1)
     (in_bom yes) (on_board no) (fields_autoplaced)
     (uuid 7bd08119-7966-4e7e-96ea-59dbfa44b0eb)
-    (property "Reference" "J?" (id 0) (at 297.18 114.3 0))
+    (property "Reference" "J4" (id 0) (at 297.18 114.3 0))
     (property "Value" "A_28-LC-TT" (id 1) (at 297.18 116.84 0))
     (property "Footprint" "digikey-footprints:Socket_DIP-28_15.24mm_Conn" (id 2) (at 302.26 132.08 0)
       (effects (font (size 1.524 1.524)) (justify left) hide)
@@ -8374,7 +8375,7 @@
   (symbol (lib_id "dk_Sockets-for-ICs-Transistors:A_40-LC-TT") (at 297.18 82.55 0) (unit 1)
     (in_bom yes) (on_board no) (fields_autoplaced)
     (uuid 7fe0e852-8021-4c1f-9da2-eddf8f0d397c)
-    (property "Reference" "J?" (id 0) (at 297.18 53.34 0))
+    (property "Reference" "J3" (id 0) (at 297.18 53.34 0))
     (property "Value" "A_40-LC-TT" (id 1) (at 297.18 55.88 0))
     (property "Footprint" "digikey-footprints:Socket_DIP-40_15.24mm_Conn" (id 2) (at 302.26 77.47 0)
       (effects (font (size 1.524 1.524)) (justify left) hide)
@@ -8695,7 +8696,7 @@
   (symbol (lib_id "dk_Sockets-for-ICs-Transistors:A_28-LC-TT") (at 313.69 137.16 0) (unit 1)
     (in_bom yes) (on_board no) (fields_autoplaced)
     (uuid a2f7fab1-691f-45cd-bc24-848befe214b2)
-    (property "Reference" "J?" (id 0) (at 313.69 114.3 0))
+    (property "Reference" "J6" (id 0) (at 313.69 114.3 0))
     (property "Value" "A_28-LC-TT" (id 1) (at 313.69 116.84 0))
     (property "Footprint" "digikey-footprints:Socket_DIP-28_15.24mm_Conn" (id 2) (at 318.77 132.08 0)
       (effects (font (size 1.524 1.524)) (justify left) hide)
@@ -9281,7 +9282,7 @@
   (symbol (lib_id "Connector:Barrel_Jack") (at 44.45 143.51 0) (mirror y) (unit 1)
     (in_bom yes) (on_board yes)
     (uuid daa6f6c2-cfca-4765-905e-4d8d46a60a97)
-    (property "Reference" "J5" (id 0) (at 43.0022 135.255 0))
+    (property "Reference" "J1" (id 0) (at 43.0022 135.255 0))
     (property "Value" "Barrel_Jack" (id 1) (at 43.0022 137.5664 0))
     (property "Footprint" "Connector_BarrelJack:BarrelJack_Horizontal" (id 2) (at 43.18 144.526 0)
       (effects (font (size 1.27 1.27)) hide)
@@ -9342,7 +9343,7 @@
   (symbol (lib_id "Connector_Generic:Conn_02x20_Odd_Even") (at 237.49 127 0) (unit 1)
     (in_bom yes) (on_board yes) (fields_autoplaced)
     (uuid e30d07dc-afa8-430e-989b-dd581033395b)
-    (property "Reference" "J6" (id 0) (at 238.76 97.79 0))
+    (property "Reference" "J2" (id 0) (at 238.76 97.79 0))
     (property "Value" "Connector" (id 1) (at 238.76 100.33 0))
     (property "Footprint" "Connector_PinHeader_2.54mm:PinHeader_2x20_P2.54mm_Vertical" (id 2) (at 237.49 127 0)
       (effects (font (size 1.27 1.27)) hide)
@@ -9828,22 +9829,22 @@
       (reference "D6") (unit 1) (value "1N914") (footprint "Diode_THT:D_DO-35_SOD27_P7.62mm_Horizontal")
     )
     (path "/daa6f6c2-cfca-4765-905e-4d8d46a60a97"
-      (reference "J5") (unit 1) (value "Barrel_Jack") (footprint "Connector_BarrelJack:BarrelJack_Horizontal")
+      (reference "J1") (unit 1) (value "Barrel_Jack") (footprint "Connector_BarrelJack:BarrelJack_Horizontal")
     )
     (path "/e30d07dc-afa8-430e-989b-dd581033395b"
-      (reference "J6") (unit 1) (value "Connector") (footprint "Connector_PinHeader_2.54mm:PinHeader_2x20_P2.54mm_Vertical")
-    )
-    (path "/749d5478-5876-4686-be3d-710d89412586"
-      (reference "J?") (unit 1) (value "A_40-LC-TT") (footprint "digikey-footprints:Socket_DIP-40_15.24mm_Conn")
-    )
-    (path "/7bd08119-7966-4e7e-96ea-59dbfa44b0eb"
-      (reference "J?") (unit 1) (value "A_28-LC-TT") (footprint "digikey-footprints:Socket_DIP-28_15.24mm_Conn")
+      (reference "J2") (unit 1) (value "Connector") (footprint "Connector_PinHeader_2.54mm:PinHeader_2x20_P2.54mm_Vertical")
     )
     (path "/7fe0e852-8021-4c1f-9da2-eddf8f0d397c"
-      (reference "J?") (unit 1) (value "A_40-LC-TT") (footprint "digikey-footprints:Socket_DIP-40_15.24mm_Conn")
+      (reference "J3") (unit 1) (value "A_40-LC-TT") (footprint "digikey-footprints:Socket_DIP-40_15.24mm_Conn")
+    )
+    (path "/7bd08119-7966-4e7e-96ea-59dbfa44b0eb"
+      (reference "J4") (unit 1) (value "A_28-LC-TT") (footprint "digikey-footprints:Socket_DIP-28_15.24mm_Conn")
+    )
+    (path "/749d5478-5876-4686-be3d-710d89412586"
+      (reference "J5") (unit 1) (value "A_40-LC-TT") (footprint "digikey-footprints:Socket_DIP-40_15.24mm_Conn")
     )
     (path "/a2f7fab1-691f-45cd-bc24-848befe214b2"
-      (reference "J?") (unit 1) (value "A_28-LC-TT") (footprint "digikey-footprints:Socket_DIP-28_15.24mm_Conn")
+      (reference "J6") (unit 1) (value "A_28-LC-TT") (footprint "digikey-footprints:Socket_DIP-28_15.24mm_Conn")
     )
     (path "/d832226b-fd15-49cd-aac3-b9dce252e558"
       (reference "KB1") (unit 1) (value "Push_Button") (footprint "Button_Switch_Keyboard:SW_Cherry_MX_1.00u_PCB")
