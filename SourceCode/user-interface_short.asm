@@ -125,7 +125,6 @@ PCR   = $600c               ; W65C22 Peripheral Control Register
 IFR   = $600d               ; W65C22 Interrupt Flag Register
 IER   = $600e               ; W65C22 Interrupt Enable Register
 
-
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;           HD44780U LCD Display Controller                                   ;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -282,7 +281,7 @@ irq:            pha                     ; Save accumulator
                 tya
                 pha                     ; Save Y-register
                 cld                     ; Enable binary mode/clear decimal flag
-irq_part_1:     bit TCL1
+irq_part_1:     bit TCL1                ; Zero the TCL1 flag
                 inc ticks
                 bne irq_part_2
                 inc ticks + 1
