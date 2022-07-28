@@ -19,6 +19,7 @@
 ;   To compile this code, run a command similer to:
 ;       vasm6502_oldstyle -c02 -dotdir -Fbin main.asm -o main.bin
 ;
+;       ..\..\..\Tools\vasm6502\vasm6502_oldstyle.exe -c02 -dotdir -Fbin .\user-interface_short.asm -o .\user-interface_short.bin
 ;
 ; -----------------------------------------------------------------------------
 ;   Memory
