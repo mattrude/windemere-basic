@@ -57,6 +57,12 @@ This is a proof of concept project to build a MOS 6502 computer from scratch.
 
 ## Required Tools/Software
 
+### Software Used
+
+* [KiCad](https://www.kicad.org/) - To create the Schematic and PCB
+* [vasm](http://sun.hasenbraten.de/vasm/) - To compile the Source Code
+* [miniPro](http://www.autoelectric.cn/en/tl866_main.html) - To upload the compiled binary to an eeprom
+
 ### Compiling from source
 This source file expects the use of the vasm compiler found at: http://sun.hasenbraten.de/vasm/
 
