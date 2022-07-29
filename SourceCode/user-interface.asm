@@ -192,7 +192,6 @@ cpu_checker:    sed                     ; set decimal mode
                 jsr ready
 mos6502:        lda #02                 ; MOS 6502
                 sta cpu_type
-                cli                     ; Enable CPU Interrupts
 ready:          lda #%00000001          ; Clear the LCD display
                 jsr lcd_config          ; Jump to the lcd_config subroutine
                 lda #%00000010          ; Send cursor to line 1; home position
@@ -275,40 +274,79 @@ ready_message:  .asciiz "Ready"
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;           IRQ subroutine                                                    ;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-irq:            pha                     ; Save accumulator
-                txa
-                pha                     ; Save X-register
-                tya
-                pha                     ; Save Y-register
-                cld                     ; Enable binary mode/clear decimal flag
-tcl1_part_1:    bit TCL1                ; Zero the TCL1 flag
+
+tcl1_runner:    bit TCL1                ; Zero the TCL1 flag
                 inc ticks
-                bne tcl1_part_2
+                bne tcl1_runner_2
                 inc ticks + 1
-                bne tcl1_part_2
+                bne tcl1_runner_2
                 inc ticks + 2
-                bne tcl1_part_2  
+                bne tcl1_runner_2  
                 inc ticks + 3
-                bne tcl1_part_2
+                bne tcl1_runner_2
                 inc ticks + 4
-                bne tcl1_part_2
+                bne tcl1_runner_2
                 inc ticks + 5
-                bne tcl1_part_2
-tcl1_part_2:    sec                     ; Set Carry Flag (enable subtraction)
+                bne tcl1_runner_2
+tcl1_runner_2:  sec                     ; Set Carry Flag (enable subtraction)
                 lda ticks
                 sbc tocks
                 cmp #25                 ; Have 250ms elapsed?
-                bcc irq_end             ; Branch on Carry Clear
+                bcc tcl1_end            ; Branch on Carry Clear
                 lda #$01
                 eor PORTA               ; xor the value from PORTA to $01
                 sta PORTA               ; Toggle the hartbeat LED
                 lda ticks
                 sta tocks               ; Return from Subroutine
+tcl1_end:       rts
+
+tcl2_runner:    lda #$12
+				sta $ff
+				rts
+
+cb1_runner:     rts
+
+cb2_runner:     rts
+
+sr_runner:      rts
+
+ca1_runner:     lda #$a1
+				sta $ff
+				rts
+
+ca2_runner:     lda #$a2
+				sta $ff
+				rts
+
+irq:            sei
+                pha                     ; Save accumulator
+                txa
+                pha                     ; Save X-register
+                tya
+                pha                     ; Save Y-register
+                cld                     ; Enable binary mode/clear decimal flag
+                lda IFR
+                ;bpl irq_end             ; Exit if the VIA didn't create the IRQ
+                asl 
+                bmi tcl1_runner         ; Timer CA 1 
+                asl 
+                bmi tcl2_runner         ; Timer CA 2
+                asl 
+                bmi cb1_runner          ; Peripheral B Control Line 1
+                asl 
+                bmi cb2_runner          ; Peripheral B Control Line 2
+                asl 
+                bmi sr_runner           ; Shift Register
+                asl 
+                bmi ca1_runner          ; Peripheral A Control Line 1
+                asl 
+                bmi ca2_runner          ; Peripheral A Control Line 2
 irq_end:        pla
                 tay                     ; restore Y-register
                 pla
                 tax                     ; restore X-register
                 pla                     ; restore accumulator
+                cli
                 rti                     ; resume interrupted task
 
 
