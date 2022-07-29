@@ -173,13 +173,13 @@ t1_timer:       ldx #0                  ; Zero out the X index
                 sta ticks + 4           ; Zero out the ticks-4 memory location
                 sta ticks + 5           ; Zero out the ticks-5 memory location
                 sta tocks               ; Zero out the tocks memory location
-                lda #$40          	    ; Set the Countdown Timer 1 to One-Shot
+                lda #%01000000     	    ; Set the Timer 1 to Continuous mode
                 sta ACR                 ; Store timer 1 to Aux Control Register
                 lda #$0e                ; Set timer 1 to trigger every
                 sta TCL1                ;   0.25 seconds.
                 lda #$27
                 sta TCH1
-                lda #%11000000          ; Enable IRQs & Timer 1 on w65c02
+enable_irq:     lda #%11000000          ; Enable IRQs & Timer 1 on w65c02
                 sta IER                 ; Store to Interrupt Enable Register
 cpu_checker:    sed                     ; set decimal mode
                 clc                     ; clear carry for add
@@ -281,20 +281,20 @@ irq:            pha                     ; Save accumulator
                 tya
                 pha                     ; Save Y-register
                 cld                     ; Enable binary mode/clear decimal flag
-irq_part_1:     bit TCL1                ; Zero the TCL1 flag
+tcl1_part_1:    bit TCL1                ; Zero the TCL1 flag
                 inc ticks
-                bne irq_part_2
+                bne tcl1_part_2
                 inc ticks + 1
-                bne irq_part_2
+                bne tcl1_part_2
                 inc ticks + 2
-                bne irq_part_2  
+                bne tcl1_part_2  
                 inc ticks + 3
-                bne irq_part_2
+                bne tcl1_part_2
                 inc ticks + 4
-                bne irq_part_2
+                bne tcl1_part_2
                 inc ticks + 5
-                bne irq_part_2
-irq_part_2:     sec                     ; Set Carry Flag (enable subtraction)
+                bne tcl1_part_2
+tcl1_part_2:    sec                     ; Set Carry Flag (enable subtraction)
                 lda ticks
                 sbc tocks
                 cmp #25                 ; Have 250ms elapsed?
