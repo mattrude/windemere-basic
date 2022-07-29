@@ -1,6 +1,6 @@
 # Windemere Basic 6502 Computer
 
-This is a proof of concept project to build a MOS 6502 computer from scratch. 
+This is a proof of concept project to build a MOS 6502 computer from scratch.
 
 ## About
 
@@ -64,7 +64,8 @@ This is a proof of concept project to build a MOS 6502 computer from scratch.
 * [miniPro](https://gitlab.com/DavidGriffith/minipro) - To upload the compiled binary to an eeprom
 
 ### Compiling from source
-This source file expects the use of the vasm compiler found at: http://sun.hasenbraten.de/vasm/
+
+This source file expects the use of the vasm compiler found at: [sun.hasenbraten.de/vasm](http://sun.hasenbraten.de/vasm/)
 
 To compile this code, run a command similer to:
 
