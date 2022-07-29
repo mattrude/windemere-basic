@@ -6,8 +6,6 @@ Before you are able to compile the project's source code, you will need to insta
 
 ## Using the software
 
-
-
 ## Install Needed Tools
 
 On a Ubuntu system, run:
@@ -25,7 +23,7 @@ Once the needed packets are installed, run the below to install vasm & minipro
 
 ## Compiling from Source
 
-This source file expects the use of the [vasm compiler](http://www.compilers.de/vasm.html) found at: http://sun.hasenbraten.de/vasm/
+This source file expects the use of the [vasm compiler](http://www.compilers.de/vasm.html) found at: [user-interface.asm](sun.hasenbraten.de/vasm)
 
 To compile this code, run a command similer to:
 
