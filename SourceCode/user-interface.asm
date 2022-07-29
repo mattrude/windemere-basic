@@ -141,23 +141,23 @@ RS = $20                    ; HD44780U LCD Registers Select
 boot:           ldx #$ff                ; Set the stack pointer
                 txs
 reset:          sei                     ; Disable CPU Interrupts
-                cld			            ; clear decimal mode
-                clc			            ; clear carry bit
+                cld                     ; clear decimal mode
+                clc                     ; clear carry bit
                 ldx #0                  ; Start the Index X at zero
                 ldy #0                  ; Start the Index Y at zero
-Initialize_LCD: lda #$ff          	    ; Set all pins on port "B" to output
+Initialize_LCD: lda #$ff                ; Set all pins on port "B" to output
                 sta DDRB
-                lda #$e1          	    ; top 3 pins/last, port "A" to output
+                lda #$e1                ; top 3 pins/last, port "A" to output
                 sta DDRA
-                lda #$38	            ; 8-bit mode; 2-line display; 5x8 font
+                lda #$38                ; 8-bit mode; 2-line display; 5x8 font
                 jsr lcd_config
-                lda #$c          	    ; Display on; cursor on; blink off
+                lda #$c                 ; Display on; cursor on; blink off
                 jsr lcd_config
-                lda #$6          	    ; Increment and shift cursor
+                lda #$6                 ; Increment and shift cursor
                 jsr lcd_config
-                lda #$11          	    ; Clear the LCD display
+                lda #$11                ; Clear the LCD display
                 jsr lcd_config
-                lda #$2          	    ; Send cursor to line 1
+                lda #$2                 ; Send cursor to line 1
                 jsr lcd_config
 print_boot:     lda boot_message, x     ; load the first/next character into A
                 beq t1_timer            ; Jump to loop, if accumulator is $00
@@ -173,7 +173,7 @@ t1_timer:       ldx #0                  ; Zero out the X index
                 sta ticks + 4           ; Zero out the ticks-4 memory location
                 sta ticks + 5           ; Zero out the ticks-5 memory location
                 sta tocks               ; Zero out the tocks memory location
-                lda #%01000000     	    ; Set the Timer 1 to Continuous mode
+                lda #%01000000          ; Set the Timer 1 to Continuous mode
                 sta ACR                 ; Store timer 1 to Aux Control Register
                 lda #$0e                ; Set timer 1 to trigger every
                 sta TCL1                ;   0.25 seconds.
@@ -301,8 +301,8 @@ tcl1_runner_2:  sec                     ; Set Carry Flag (enable subtraction)
 tcl1_end:       rts
 
 tcl2_runner:    lda #$12
-				sta $ff
-				rts
+                sta $ff
+                rts
 
 cb1_runner:     rts
 
@@ -311,12 +311,12 @@ cb2_runner:     rts
 sr_runner:      rts
 
 ca1_runner:     lda #$a1
-				sta $ff
-				rts
+                sta $ff
+                rts
 
 ca2_runner:     lda #$a2
-				sta $ff
-				rts
+                sta $ff
+                rts
 
 irq:            sei
                 pha                     ; Save accumulator
