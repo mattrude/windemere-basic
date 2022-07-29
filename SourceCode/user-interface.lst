@@ -62,9 +62,9 @@ Source: "user-interface.asm"
                         	    56: ;
                         	    57: ;
                         	    58: ;
-                        	    59: ;     ┌────────────────────────────────────�
+                        	    59: ;     ┌────────────────────────────────────�
                         	    60: ;     │                 Zero Page RAM Locations                │
-                        	    61: ;     ├────────────────────────────────────�
+                        	    61: ;     ├────────────────────────────────────�
                         	    62: ;     │ 0000: -- -- -- -- -- -- -- --  -- -- -- -- -- -- -- -- │
                         	    63: ;     │ 0010: -- -- -- -- -- -- -- --  -- -- -- -- -- -- -- -- │
                         	    64: ;     │ 0020: -- -- -- -- -- -- -- --  -- -- -- -- -- -- -- -- │
@@ -81,7 +81,7 @@ Source: "user-interface.asm"
                         	    75: ;     │ 00d0: -- -- -- -- -- -- -- --  -- -- -- -- -- -- -- -- │
                         	    76: ;     │ 00e0: -- -- -- -- -- -- -- --  -- -- -- -- -- -- -- -- │
                         	    77: ;     │ 00f0: 00 00 00 00 00 00 00 00  -- -- -- -- -- -- -- -- │
-                        	    78: ;     └────────────────────────────────────�
+                        	    78: ;     └────────────────────────────────────�
                         	    79: ;
                         	    80: ; -----------------------------------------------------------------------------
                         	    81: ;   License
@@ -364,96 +364,3 @@ Source: "user-interface.asm"
                         	   356:                 .org $fffc
 01:FFFC 0080            	   357:                 .word boot
 01:FFFE 2F81            	   358:                 .word irq
-
-
-Symbols by name:
-ACR                              E:600B
-DDRA                             E:6003
-DDRB                             E:6002
-EN                               E:0080
-IER                              E:600E
-IFR                              E:600D
-Initialize_LCD                   A:800A
-PORTA                            E:6001
-PORTB                            E:6000
-RS                               E:0020
-RW                               E:0040
-TCH1                             E:6005
-TCL1                             E:6004
-boot                             A:8000
-boot_message                     A:80DE
-ca1_runner                       A:8125
-ca2_runner                       A:812A
-cb1_runner                       A:8122
-cb2_runner                       A:8123
-cpu_checker                      A:805F
-cpu_type                         E:00F7
-enable_irq                       A:805A
-irq                              A:812F
-irq_end                          A:814E
-lcd_busy                         A:80C1
-lcd_config                       A:808F
-lcd_ready                        A:807F
-lcd_wait                         A:80BB
-loop                             A:808C
-mos6502                          A:806F
-print_boot                       A:802D
-print_char                       A:80A5
-ready                            A:8073
-ready_message                    A:80E6
-reset                            A:8003
-reset_end                        A:808B
-sr_runner                        A:8124
-t1_timer                         A:8039
-tcl1_end                         A:811C
-tcl1_runner                      A:80EC
-tcl1_runner_2                    A:8107
-tcl2_runner                      A:811D
-ticks                            E:00F0
-tocks                            E:00F6
-
-Symbols by value:
-0020 RS
-0040 RW
-0080 EN
-00F0 ticks
-00F6 tocks
-00F7 cpu_type
-6000 PORTB
-6001 PORTA
-6002 DDRB
-6003 DDRA
-6004 TCL1
-6005 TCH1
-600B ACR
-600D IFR
-600E IER
-8000 boot
-8003 reset
-800A Initialize_LCD
-802D print_boot
-8039 t1_timer
-805A enable_irq
-805F cpu_checker
-806F mos6502
-8073 ready
-807F lcd_ready
-808B reset_end
-808C loop
-808F lcd_config
-80A5 print_char
-80BB lcd_wait
-80C1 lcd_busy
-80DE boot_message
-80E6 ready_message
-80EC tcl1_runner
-8107 tcl1_runner_2
-811C tcl1_end
-811D tcl2_runner
-8122 cb1_runner
-8123 cb2_runner
-8124 sr_runner
-8125 ca1_runner
-812A ca2_runner
-812F irq
-814E irq_end
