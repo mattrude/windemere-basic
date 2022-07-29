@@ -62,7 +62,7 @@ This is a proof of concept project to build a MOS 6502 computer from scratch.
 * [KiCad](https://www.kicad.org/) - To create the Schematic and PCB
 * [vasm](http://sun.hasenbraten.de/vasm/) - To compile the Source Code
 * [miniPro](https://gitlab.com/DavidGriffith/minipro) - To upload the compiled binary to an eeprom
-* [ClickCharts](https://www.nchsoftware.com/chart/index.html) - Flowchart software
+* [ClickCharts](https://www.nchsoftware.com/chart/index.html) - To create flowchart's for project documentation.
 
 ### Compiling from source
 
