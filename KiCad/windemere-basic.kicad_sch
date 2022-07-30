@@ -6,8 +6,8 @@
 
   (title_block
     (title "Windemere Basic")
-    (date "2022-03-15")
-    (rev "A")
+    (date "2022-07-29")
+    (rev "B")
     (company "Matt Rude <matt@mattrude.com>")
     (comment 1 "65c02 computer with LCD screen and 20 button keypad")
     (comment 2 "Memory Map:  RAM: $0000 - $5fff,  65c22: $6000 - $600f,  ROM: $8000 - $ffff")
@@ -3319,7 +3319,6 @@
       )
     )
   )
-
 
   (junction (at 19.05 66.04) (diameter 0) (color 0 0 0 0)
     (uuid 0449c196-b50c-44a5-a416-c73bd9b864bb)
