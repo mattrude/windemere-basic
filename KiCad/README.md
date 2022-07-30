@@ -14,6 +14,22 @@ interrupt to turn off the beep, or a cycle-counting interrupt to stop
 the arb at the right time.
 ```
 
+A code example from Jeff Tranter:[[1](#ref1)]
+
+```
+  COUNT = $4119
+      
+  LDA #$00
+  STA IER             ; disable all interrupts
+  LDA #%11000000
+  STA ACR             ; Set to T1 free running PB7 enabled
+  LDA #<COUNT
+  STA T1CL            ; Low byte of count
+  LDA #>COUNT
+  STA T1CH            ; High byte of count
+  RTS
+```
+
 ## LCD Screen
 
 ## LED Lights
