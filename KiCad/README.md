@@ -6,7 +6,7 @@ The file describes the layout of the board and how components are used.
 
 The buzzer uses the 6522's PB7 and free-running T1 to output a modulation needed to create sound.[^1][^2]
 
-```
+```text
 You can use the 6522's PB7 and free-running T1 to output a beep signal,
 or clock out an exact number of cycles from an arbitrary waveform generator,
 while leaving the µP free to do other things at the same time.
@@ -18,7 +18,7 @@ the arb at the right time.
 
 A code example from Jeff Tranter:[^1]
 
-```
+```asm
   COUNT = $4119
       
   LDA #$00
