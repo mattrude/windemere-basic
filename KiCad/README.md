@@ -1,8 +1,10 @@
 # Hardware
 
+The file describes the layout of the board and how components are used.
+
 ## Buzzer
 
-The buzzer uses the 6522's PB7 and free-running T1 to output a modulation needed to create sound.[[1](#ref1)][[2](#ref2)]
+The buzzer uses the 6522's PB7 and free-running T1 to output a modulation needed to create sound.[^1][^2]
 
 ```
 You can use the 6522's PB7 and free-running T1 to output a beep signal,
@@ -14,7 +16,7 @@ interrupt to turn off the beep, or a cycle-counting interrupt to stop
 the arb at the right time.
 ```
 
-A code example from Jeff Tranter:[[1](#ref1)]
+A code example from Jeff Tranter:[^1]
 
 ```
   COUNT = $4119
@@ -38,7 +40,6 @@ A code example from Jeff Tranter:[[1](#ref1)]
 
 ## Reset Circit
 
-## References & Notes
-
-* <span id="ref1"/>[1] - [6522 VIA Experiment #2](http://jefftranter.blogspot.com/2012/03/6522-via-experiment-2.html)
-* <span id="ref2"/>[2] - [Tip of the day #17](http://forum.6502.org/viewtopic.php?f=7&t=342&start=17)
+**References & Notes**
+[^1]: [6522 VIA Experiment #2](http://jefftranter.blogspot.com/2012/03/6522-via-experiment-2.html)
+[^2]: [Tip of the day #17](http://forum.6502.org/viewtopic.php?f=7&t=342&start=17)
