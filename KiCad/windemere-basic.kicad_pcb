@@ -6,8 +6,13 @@
 
   (paper "B")
   (title_block
-    (date "2022-07-29")
+    (title "Windemere Basic")
+    (date "2022-08-01")
     (rev "A")
+    (company "Matt Rude <matt@mattrude.com>")
+    (comment 1 "65c02 computer with LCD screen and 20 button keypad")
+    (comment 2 "Memory Map:  RAM: $0000 - $5fff,  65c22: $6000 - $600f,  ROM: $8000 - $ffff")
+    (comment 3 "Engineered and designed in Windemere Township, Pine County, Minnesota, USA")
   )
 
   (layers
@@ -3564,7 +3569,7 @@
     (fp_arc (start -0.29972 8.49884) (mid -0.153162 8.145018) (end 0.20066 7.99846) (layer "F.SilkS") (width 0.12) (tstamp 630a494d-38d0-48f7-b6e0-670c301df03f))
     (fp_arc (start 63.7 8) (mid 64.053553 8.146447) (end 64.2 8.5) (layer "F.SilkS") (width 0.12) (tstamp 96eb12b7-8f7b-4e9d-86aa-866cc715f0a8))
     (fp_arc (start 0.20066 22.9997) (mid -0.153162 22.853142) (end -0.29972 22.49932) (layer "F.SilkS") (width 0.12) (tstamp 9aabb0df-49bb-4982-b29c-a60a01b4bd2a))
-    (fp_arc (start 64.20104 22.49932) (mid 64.054473 22.853115) (end 63.70066 22.9997) (layer "F.SilkS") (width 0.12) (tstamp f4595dd7-a476-4af3-b56a-c4b97a602e55))
+    (fp_arc (start 64.20104 22.49932) (mid 64.054479 22.85315) (end 63.70066 22.9997) (layer "F.SilkS") (width 0.12) (tstamp f4595dd7-a476-4af3-b56a-c4b97a602e55))
     (fp_line (start -8.25 33.75) (end 72.25 33.75) (layer "F.CrtYd") (width 0.05) (tstamp 57d72753-ac98-4d26-a7e5-029e4fc09719))
     (fp_line (start 72.25 -2.75) (end 72.25 33.75) (layer "F.CrtYd") (width 0.05) (tstamp 96d51ca8-c634-468f-84d5-0f7c67660e1e))
     (fp_line (start -8.25 -2.75) (end -8.25 33.75) (layer "F.CrtYd") (width 0.05) (tstamp a35f28e7-bf87-4567-b184-304adaf0eff9))
