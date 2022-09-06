@@ -20,6 +20,8 @@
 ;   To compile this code, run a command similer to:
 ;       vasm6502_oldstyle -c02 -dotdir -Fbin main.asm -o main.bin
 ;
+;       cd C:\Users\Owner\OneDrive\Documents\Eletrontics\6502\Projects\
+;           windemere-basic\SourceCode
 ;       ..\..\..\Tools\vasm6502\vasm6502_oldstyle.exe -c02 -dotdir
 ;       -Fbin user-interface_short.asm -o user-interface_short.bin
 ;
@@ -204,6 +206,14 @@ lcd_ready:      lda ready_message, x    ; load the first/next character into A
                 jmp lcd_ready           ; jump back to the top of lcd_ready
 reset_end:      cli                     ; Enable CPU Interupts
 
+
+                lda #<loop              ; Load the low byte of the function
+                sta $00                 ; Store the bit to the zero page
+                lda #>loop              ; Load the high byte of the function
+                sta $01                 ; Store the bit to the zero page
+                jmp ($00)               ; Run an indrect jump
+
+
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;           The forever / primary loop                                        ;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -216,7 +226,6 @@ loop:           jmp loop
 
 ;------------------------------------------------------------------------------
 ;   LCD Store instruction subroutine
-
 lcd_config:     jsr lcd_wait            ; Jump to the lcd_wait subroutine
                 sta PORTB
                 lda #0                  ; Clear LCD RS/RW/EN bits
@@ -326,7 +335,7 @@ irq:            sei
                 pha                     ; Save Y-register
                 cld                     ; Enable binary mode/clear decimal flag
                 lda IFR
-                ;bpl irq_end             ; Exit if the VIA didn't create the IRQ
+                bpl irq_end             ; Exit if the VIA didn't create the IRQ
                 asl 
                 bmi tcl1_runner         ; Timer CA 1 
                 asl 
