@@ -139,7 +139,6 @@ RS = $20                    ; HD44780U LCD Registers Select
 ;           Start of program / Reset button pressed                           ;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
                 .org $8000              ; Start at memory location 8000 hex
-;;; Configure the stack
 boot:           ldx #$ff                ; Set the stack pointer
                 txs
 reset:          sei                     ; Disable CPU Interrupts
