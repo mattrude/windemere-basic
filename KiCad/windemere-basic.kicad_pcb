@@ -620,7 +620,7 @@
       (effects (font (size 1 1) (thickness 0.15)))
       (tstamp 70fe2ce3-26e5-4656-983f-e1a7490cc208)
     )
-    (fp_text value "28C256" (at 11.445 43) (layer "F.Fab")
+    (fp_text value "28C256" (at 11.445 43) (layer "F.SilkS")
       (effects (font (size 1 1) (thickness 0.15)))
       (tstamp 06953621-c037-4911-9588-e2b6b1c4b13d)
     )
