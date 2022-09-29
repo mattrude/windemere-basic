@@ -7,7 +7,7 @@
   (title_block
     (title "Windemere Basic")
     (date "2022-08-01")
-    (rev "A")
+    (rev "B")
     (company "Matt Rude <matt@mattrude.com>")
     (comment 1 "65c02 computer with LCD screen and 20 button keypad")
     (comment 2 "Memory Map:  RAM: $0000 - $5fff,  65c22: $6000 - $600f,  ROM: $8000 - $ffff")
