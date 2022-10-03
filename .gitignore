@@ -5,3 +5,5 @@ KiCad/_autosave-*
 KiCad/#auto_saved_files#
 KiCad/windemere-basic.kicad_prl
 KiCad/windemere-basic-backups/*
+SourceCode/*.bin
+SourceCode/*.lst

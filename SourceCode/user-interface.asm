@@ -226,26 +226,26 @@ loop:           jmp loop
 ;------------------------------------------------------------------------------
 ;   LCD Store instruction subroutine
 lcd_config:     jsr lcd_wait            ; Jump to the lcd_wait subroutine
-                sta PORTB
+                sta PORTB               ; Store the above to Port "B"
                 lda #0                  ; Clear LCD RS/RW/EN bits
-                sta PORTA
+                sta PORTA               ; Store the above to Port "A"
                 lda #EN                 ; Set LCD EN (enable) bit
-                sta PORTA
+                sta PORTA               ; Store the above to Port "A"
                 lda #0                  ; Clear LCD RS/RW/EN bits
-                sta PORTA
+                sta PORTA               ; Store the above to Port "A"
                 rts                     ; Return from Subroutine
 
 
 ;------------------------------------------------------------------------------
 ;   LCD Print Character subroutine
 print_char:     jsr lcd_wait            ; Jump to the lcd_wait subroutine
-                sta PORTB
+                sta PORTB               ; Store the above to Port "B"
                 lda #RS                 ; Set LCD RS; Clear RW/EN bits
-                sta PORTA
+                sta PORTA               ; Store the above to Port "A"
                 lda #(RS | EN)          ; Set LCD EN (enable) bit
-                sta PORTA
+                sta PORTA               ; Store the above to Port "A"
                 lda #RS                 ; Clear LCD EN (enable) bits
-                sta PORTA
+                sta PORTA               ; Store the above to Port "A"
                 rts                     ; Return from Subroutine
 
 
