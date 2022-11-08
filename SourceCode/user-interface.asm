@@ -23,7 +23,7 @@
 ;       cd C:\Users\Owner\OneDrive\Documents\Eletrontics\6502\Projects\
 ;           windemere-basic\SourceCode
 ;       ..\..\..\Tools\vasm6502\vasm6502_oldstyle.exe -c02 -dotdir
-;       -Fbin user-interface_short.asm -o user-interface_short.bin
+;       -Fbin user-interface.asm -o user-interface.bin
 ;
 ; -----------------------------------------------------------------------------
 ;   Memory
