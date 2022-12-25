@@ -1,7 +1,7 @@
-;   File: user-interface_short.asm
+;   File: 4-bit-user-interface_short.asm
 ;   Author: Matt Rude <matt@mattrude.com>
 ;   URL: https://github.com/mattrude/windemere-basic
-;   Date: 2022-01-22
+;   Date: 2022-12-22
 ;   Version: 0.1.0a
 ;
 ;------------------------------------------------------------------------------
