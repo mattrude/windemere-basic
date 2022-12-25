@@ -13,10 +13,10 @@ RS = %00010000
     .org $8000
 
 reset:
-	lda #%01111111 ; Set pins on port B to output
+	lda #%01111111          ; Set pins on VIA port B to output
 	sta DDRB
 	
-	lda #%00000010 ; Set LCD to 4-pins mode
+	lda #%00000010          ; Set LCD to 4-pins mode
 	jsr lcd_instruction
 	lda #%00000010
 	jsr lcd_instruction

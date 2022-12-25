@@ -21,7 +21,7 @@
 ;       vasm6502_oldstyle -c02 -dotdir -Fbin main.asm -o main.bin
 ;
 ;       ..\..\..\Tools\vasm6502\vasm6502_oldstyle.exe -c02 -dotdir
-;       -Fbin user-interface_short.asm -o user-interface_short.bin
+;       -Fbin 4-bit-user-interface_short.asm -o 4-bit-user-interface_short.bin
 ;
 ; -----------------------------------------------------------------------------
 ;   Memory
@@ -128,9 +128,9 @@ IER   = $600e               ; W65C22 Interrupt Enable Register
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;           HD44780U LCD Display Controller                                   ;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-EN = $80                    ; HD44780U LCD Starts data read/write
-RW = $40                    ; HD44780U LCD Enables Screen to read data
-RS = $20                    ; HD44780U LCD Registers Select
+EN = $04                    ; HD44780U LCD Starts data read/write
+RW = $02                    ; HD44780U LCD Enables Screen to read data
+RS = $01                    ; HD44780U LCD Registers Select
 
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -149,7 +149,7 @@ Initialize_LCD: lda #$ff                ; Set all pins on port "B" to output
                 sta DDRB
                 lda #$e1                ; top 3 pins/last, port "A" to output
                 sta DDRA
-                lda #$38                ; 8-bit mode; 2-line display; 5x8 font
+                lda #%00111010          ; 4-bit mode; 2-line display; 5x8 font
                 jsr lcd_config
                 lda #$c                 ; Display on; cursor on; blink off
                 jsr lcd_config
@@ -221,11 +221,11 @@ loop:           jmp loop
 lcd_config:     jsr lcd_wait            ; Jump to the lcd_wait subroutine
                 sta PORTB
                 lda #0                  ; Clear LCD RS/RW/EN bits
-                sta PORTA
+                sta PORTB
                 lda #EN                 ; Set LCD EN (enable) bit
-                sta PORTA
+                sta PORTB
                 lda #0                  ; Clear LCD RS/RW/EN bits
-                sta PORTA
+                sta PORTB
                 rts                     ; Return from Subroutine
 
 
@@ -234,11 +234,11 @@ lcd_config:     jsr lcd_wait            ; Jump to the lcd_wait subroutine
 print_char:     jsr lcd_wait            ; Jump to the lcd_wait subroutine
                 sta PORTB
                 lda #RS                 ; Set LCD RS; Clear RW/EN bits
-                sta PORTA
+                sta PORTB
                 lda #(RS | EN)          ; Set LCD EN (enable) bit
-                sta PORTA
+                sta PORTB
                 lda #RS                 ; Clear LCD EN (enable) bits
-                sta PORTA
+                sta PORTB
                 rts                     ; Return from Subroutine
 
 
@@ -248,14 +248,14 @@ lcd_wait:       pha                     ; Push Accumulator to Stack
                 lda #%00000000          ; Set Port B as an input
                 sta DDRB                ; Load the setting to Port "B"
 lcd_busy:       lda #RW                 ; Set port to Read/Write
-                sta PORTA               ; Load the setting to Port "A"
+                sta PORTB               ; Load the setting to Port "A"
                 lda #(RW | EN)          ; Set port to Read/Write & Enable
-                sta PORTA               ; Load the setting to Port "A"
+                sta PORTB               ; Load the setting to Port "A"
                 lda PORTB               ; Load Accumulator with Port "B"
                 and #%10000000          ; Combine the above with $80
                 bne lcd_busy            ; Jump back to the top of lcd_busy
                 lda #RW                 ; Set port to Read/Write
-                sta PORTA               ; Load the setting to Port "A"
+                sta PORTB               ; Load the setting to Port "A"
                 lda #%11111111          ; Port B is output
                 sta DDRB                ; Load the setting to Port "B"
                 pla                     ; Pull Accumulator from Stack
@@ -300,8 +300,8 @@ tcl1_part_2:    sec                     ; Set Carry Flag (enable subtraction)
                 cmp #25                 ; Have 250ms elapsed?
                 bcc irq_end             ; Branch on Carry Clear
                 lda #$01
-                eor PORTA               ; xor the value from PORTA to $01
-                sta PORTA               ; Toggle the hartbeat LED
+                eor PORTB               ; xor the value from PORTB to $01
+                sta PORTB               ; Toggle the hartbeat LED
                 lda ticks
                 sta tocks               ; Return from Subroutine
 irq_end:        pla
