@@ -2,7 +2,7 @@
 
 This directory stores the required source code for this project.  The source code must be compiled before you may use it on the computer.
 
-Before you are able to compile the project's source code, you will need to install [vasm](http://sun.hasenbraten.de/vasm/) to compile the source code, and [minipro](https://gitlab.com/DavidGriffith/minipro) or [XGecu](http://www.autoelectric.cn/en/download.html) to burn the compiled code to the EEPROM.
+Before you are able to compile the project's source code, you will need to install [vasm](http://sun.hasenbraten.de/vasm/) compiler, and [minipro](https://gitlab.com/DavidGriffith/minipro) or [XGecu](http://www.autoelectric.cn/en/download.html) to burn the compiled code to the EEPROM.
 
 ## Using the software
 
