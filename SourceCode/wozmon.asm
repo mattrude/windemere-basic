@@ -12,6 +12,17 @@
 ;
 ;   The below code is written for a W65C02 connected to a W65C22 (VIA)
 ;
+;   Wozmon is a machine-code monitor program; this is essentially code that
+;   starts to run in a processor at initial power on.
+;   
+;   The monitor would let you examine and change memory. Some even had built-in
+;   disassemblers, debuggers and a whole host of tools to help you get going in
+;   a new machine. They would include subroutines that could be used by other
+;   programs, these basic input output subroutines, or BIOS as it came to be
+;   known were essential for bigger programs as it took that burden away from
+;   the programmer and helped to make programs run on different systems, or at
+;   least easier to port from one system to another.
+;
 ; -----------------------------------------------------------------------------
 ;   Compiling from source
 ;
@@ -81,7 +92,7 @@
 ;
 ; MIT No Attribution License
 ;
-; Copyright (c) 1978 Steve Wozniak
+; Copyright (c) 1976 Steve Wozniak
 ;               2023 Matt Rude
 ; 
 ; Permission is hereby granted, free of charge, to any person obtaining
@@ -203,7 +214,7 @@ HEXSHIFT:
                 DEX                    ; Done 4 shifts?
                 BNE     HEXSHIFT       ; No, loop.
                 INY                    ; Advance text index.
-                BNE     NEXTHEX        ; Always taken. Check next character for hex.
+                BNE     NEXTHEX        ; Always taken. Check next char for hex.
 
 NOTHEX:
                 CPY     YSAV           ; Check if L, H empty (no hex digits).
