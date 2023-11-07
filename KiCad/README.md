@@ -2,6 +2,10 @@
 
 The file describes the layout of the board and how components are used.
 
+## Control Logic
+
+4 channel NAND gate the [SN74LS00](https://www.ti.com/lit/gpn/sn74ls00)
+
 ## Buzzer
 
 The buzzer uses the 6522's PB7 and free-running T1 to output a modulation needed to create sound.[^1][^2]
