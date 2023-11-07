@@ -120,11 +120,13 @@ H           = $29                      ; Hex value parsing High
 YSAV        = $2A                      ; Used to see if hex value is given
 MODE        = $2B                      ; $00=XAM, $7F=STOR, $AE=BLOCK XAM
 
-IN          = $0200                    ; Input buffer
-ACIA_DATA   = $5000
-ACIA_STATUS = $5001
-ACIA_CMD    = $5002
-ACIA_CTRL   = $5003
+IN          = $0200                    ; Start of the Input Buffer
+
+; W65C51 serial communication adapter memory locations
+ACIA_DATA   = $5000                    ; Serial data control register
+ACIA_STATUS = $5001                    ; 
+ACIA_CMD    = $5002                    ; 
+ACIA_CTRL   = $5003                    ; 
 
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
