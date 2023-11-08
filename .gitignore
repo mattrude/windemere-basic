@@ -1,10 +1,10 @@
-KiCad/fp-info-cache
-KiCad/fp-info-cache-desktop
-KiCad/fp-lib-table
-KiCad/_autosave-*
-KiCad/#auto_saved_files#
-KiCad/windemere-basic.kicad_prl
-KiCad/windemere-basic-backups/*
+Hardware/fp-info-cache
+Hardware/fp-info-cache-desktop
+Hardware/fp-lib-table
+Hardware/_autosave-*
+Hardware/#auto_saved_files#
+Hardware/windemere-basic.kicad_prl
+Hardware/windemere-basic-backups/*
 SourceCode/*.bin
 SourceCode/*.lst
 SourceCode/*.o
