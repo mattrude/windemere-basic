@@ -4,7 +4,7 @@ The file describes the layout of the board and how components are used.
 
 ## Control Logic
 
-4 channel NAND gate the [SN74LS00](https://www.ti.com/lit/gpn/sn74ls00) 
+The control logic enables the different componints connected to the registry according to the address requested by the 65C02 CPU. We accplish this primarly by using 3 channels of a 4 channel NAND gate, the [74LS00](https://www.ti.com/lit/gpn/sn74ls00).
 
 We start by flipping the bit of `A15` registry line by using two gates of a NAND gate. The inverted output is sent first to the `CS` (chip select) line of the EEPROM. This enables the ROM when the address requested on the registry bus is `$8000`.
 
