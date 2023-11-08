@@ -5,6 +5,7 @@ Hardware/_autosave-*
 Hardware/#auto_saved_files#
 Hardware/windemere-basic.kicad_prl
 Hardware/windemere-basic-backups/*
+Hardware/~windemere-basic.kicad_sch.lck
 SourceCode/*.bin
 SourceCode/*.lst
 SourceCode/*.o
