@@ -1,10 +1,11 @@
+;   Name: User Interface - Short
 ;   File: user-interface_short.asm
 ;   Author: Matt Rude <matt@mattrude.com>
 ;   URL: https://github.com/mattrude/windemere-basic
 ;   Date: 2022-01-22
-;   Version: 0.1.0a
+;   Version: 0.1.0-Alpha
 ;
-;------------------------------------------------------------------------------
+; -----------------------------------------------------------------------------
 ;   Program Summary
 ;
 ;
@@ -21,7 +22,8 @@
 ;       vasm6502_oldstyle -c02 -dotdir -Fbin main.asm -o main.bin
 ;
 ;       ..\..\..\Tools\vasm6502\vasm6502_oldstyle.exe -c02 -dotdir
-;       -Fbin user-interface_short.asm -o user-interface_short.bin
+;       -L user-interface_short.lst -Lall -Fbin user-interface_short.asm
+;       -o user-interface_short.bin
 ;
 ; -----------------------------------------------------------------------------
 ;   Memory
@@ -99,6 +101,9 @@
 ; FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
 ; DEALINGS IN THE SOFTWARE.
 
+   ;.setcpu "65C02"             ; Declare the CPU type
+    .org $FE00                  ; Start at memory location 8000 hex
+
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;           Staic RAM Locations                                               ;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -136,7 +141,7 @@ RS = $20                    ; HD44780U LCD Registers Select
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;           Start of program / Reset button pressed                           ;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-                .org $8000              ; Start at memory location 8000 hex
+
 ;;; Configure the stack
 boot:           ldx #$ff                ; Set the stack pointer
                 txs
