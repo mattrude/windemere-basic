@@ -12,6 +12,8 @@ The above inverted `A15` line from the NAND gate continues to one channel of a s
 
 The same inverted `A15` line from the first NAND gate is used a third time, this time in corrdination with the `A14` line.  The output from this third gate connects to the `CS` pin of the WD65C22 VIA chip, enableing access in the `$6000`
 
+## W65C22 VIA
+
 ## Buzzer
 
 The buzzer uses the 6522's PB7 and free-running T1 to output a modulation needed to create sound.[^1][^2]
