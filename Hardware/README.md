@@ -14,6 +14,8 @@ The same inverted `A15` line from the first NAND gate is used a third time, this
 
 ## W65C22 VIA
 
+The W65C22 Versatile Interface Adapter (VIA) is a flexible I/O device
+
 ## Buzzer
 
 The buzzer uses the 6522's PB7 and free-running T1 to output a modulation needed to create sound.[^1][^2]
