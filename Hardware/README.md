@@ -48,9 +48,6 @@ A code example from Jeff Tranter:[^1]
 
 ## 20-Button Keypad
 
-[!IMPORTANT]
-This uses the SN74922, a opsolete part
-
 ## Reset Circit
 
 **References & Notes**
