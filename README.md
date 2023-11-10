@@ -2,6 +2,8 @@
 
 This is a proof of concept project to build a 65c02 computer from scratch.
 
+This repository is broken up into 2 main sections, [Hardware](Hardware#readme) and [Software](SourceCode#readme).
+
 ## About
 
                  ┌───────────────────────────┐
