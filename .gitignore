@@ -1,6 +1,8 @@
 Hardware/fp-info-cache
 Hardware/fp-info-cache-desktop
 Hardware/fp-lib-table
+Hardware/freerouting.dsn
+Hardware/temp-freerouting.dsn
 Hardware/_autosave-*
 Hardware/#auto_saved_files#
 Hardware/windemere-basic.kicad_prl
