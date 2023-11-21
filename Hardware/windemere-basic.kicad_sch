@@ -9993,7 +9993,7 @@
     (property "Footprint" "Package_TO_SOT_THT:TO-92" (at 199.39 34.29 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-    (property "Datasheet" "http://ww1.microchip.com/downloads/en/DeviceDoc/11187f.pdf" (at 196.85 36.83 0)
+    (property "Datasheet" "https://ww1.microchip.com/downloads/aemDocuments/documents/APID/ProductDocuments/DataSheets/MCP102-Data-Sheet-DS20001906.pdf" (at 196.85 36.83 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Digikey Part" "MCP102-475E/TO-ND" (at 189.23 30.48 0)
