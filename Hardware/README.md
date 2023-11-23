@@ -14,7 +14,7 @@ The control logic enables the different componints connected to the registry acc
 
 ## W65C22 VIA
 
-The [W65C22](https://www.westerndesigncenter.com/wdc/documentation/w65c22.pdf) Versatile Interface Adapter (VIA) is a flexible I/O device used to connect to the [LCD Screen](#lcd-screen) and [20-Button Keypad](#20-button-keypad).
+The [W65C22](https://www.westerndesigncenter.com/wdc/documentation/w65c22.pdf) Versatile Interface Adapter (VIA) is a flexible I/O device used to connect to the [LCD Screen](#lcd-screen), [20-Button Keypad](#20-button-keypad) and used in software for it's timers.
 
 As described in part 3 of the control logic section above, the VIA chip is acessed within the `$6000` address block.
 
@@ -23,6 +23,14 @@ As described in part 3 of the control logic section above, the VIA chip is acess
 The liquid crystal display (LCD) screen module is a Hitachi HD44780 LCD controller is an alphanumeric dot matrix LCD controller developed by Hitachi in the 1980s. The character set of the controller includes ASCII characters, Japanese Kana characters, and some symbols in two 40 character lines.
 
 ## 20-Button Keypad
+
+For the 20-button keypad we use the [MM74C923](https://mm.digikey.com/Volume0/opasdata/d220001/medias/docus/1001/MM74C922,923.pdf) 20-Key Encoder connected to the above W65C22 VIA chip.
+
+| W65C22 VIA  | MM74C923   |
+| ----------- | ---------- |
+| PA0 (pin 2) | B (pin 18) |
+| PA1 (pin 3) | C (pin 17) |
+
 
 ## Reset Circit
 
