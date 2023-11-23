@@ -14,7 +14,7 @@ The control logic enables the different componints connected to the registry acc
 
 ## W65C22 VIA
 
-The [W65C22](https://www.westerndesigncenter.com/wdc/documentation/w65c22.pdf) Versatile Interface Adapter (VIA) is a flexible I/O device used to connect to the LCD Screen and 20-Button Keypad.
+The [W65C22](https://www.westerndesigncenter.com/wdc/documentation/w65c22.pdf) Versatile Interface Adapter (VIA) is a flexible I/O device used to connect to the [LCD Screen](#lcd-screen) and [20-Button Keypad](#20-button-keypad).
 
 As described in part 3 of the control logic section above, the VIA chip is acessed within the `$6000` address block.
 
