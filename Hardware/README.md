@@ -28,14 +28,6 @@ For the 20-button keypad we use the [MM74C923](https://mm.digikey.com/Volume0/op
 
 When a button is pressed, the chip will set the output as discribed below and set the `DA` (Data Available) pin, connected to the `CA1` pin on the W65C22, to high.
 
-| W65C22 VIA  | MM74C923   |
-| ----------- | ---------- |
-| PA0 (pin 2) | A (pin 19) |
-| PA1 (pin 3) | B (pin 18) |
-| PA2 (pin 4) | C (pin 17) |
-| PA3 (pin 5) | D (pin 16) |
-| PA4 (pin 6) | E (pin 15) |
-
 A Simple map of the keys.
 
 |    | A | B | C | D | E |
@@ -60,6 +52,14 @@ A Simple map of the keys.
 | 17 | 1 | - | - | - | 1 |
 | 18 | - | 1 | - | - | 1 |
 | 19 | 1 | 1 | - | - | 1 |
+
+| W65C22 VIA  | MM74C923   |
+| ----------- | ---------- |
+| PA0 (pin 2) | A (pin 19) |
+| PA1 (pin 3) | B (pin 18) |
+| PA2 (pin 4) | C (pin 17) |
+| PA3 (pin 5) | D (pin 16) |
+| PA4 (pin 6) | E (pin 15) |
 
 ## Reset Circit
 
