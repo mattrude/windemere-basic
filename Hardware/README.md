@@ -26,7 +26,7 @@ The liquid crystal display (LCD) screen module is a Hitachi HD44780 LCD controll
 
 For the 20-button keypad we use the [MM74C923](https://mm.digikey.com/Volume0/opasdata/d220001/medias/docus/1001/MM74C922,923.pdf) 20-Key Encoder connected to the above W65C22 VIA chip.
 
-When a button is pressed, the chip will set the output as discribed below and set the DA (Data Available) pin, connected to the `CA1` pin on the W65C22, to high.
+When a button is pressed, the chip will set the output as discribed below and set the `DA` (Data Available) pin, connected to the `CA1` pin on the W65C22, to high.
 
 | W65C22 VIA  | MM74C923   |
 | ----------- | ---------- |
@@ -36,6 +36,30 @@ When a button is pressed, the chip will set the output as discribed below and se
 | PA3 (pin 5) | D (pin 16) |
 | PA4 (pin 6) | E (pin 15) |
 
+A Simple map of the keys.
+
+|    | A | B | C | D | E |
+| -- | - | - | - | - | - |
+|  0 | - | - | - | - | - |
+|  1 | 1 | - | - | - | - |
+|  2 | - | 1 | - | - | - |
+|  3 | 1 | 1 | - | - | - |
+|  4 | - | - | 1 | - | - |
+|  5 | 1 | - | 1 | - | - |
+|  6 | - | 1 | 1 | - | - |
+|  7 | 1 | 1 | 1 | - | - |
+|  8 | - | - | - | 1 | - |
+|  9 | 1 | - | - | 1 | - |
+| 10 | - | 1 | - | 1 | - |
+| 11 | 1 | 1 | - | 1 | - |
+| 12 | - | - | 1 | 1 | - |
+| 13 | 1 | - | 1 | 1 | - |
+| 14 | - | 1 | 1 | 1 | - |
+| 15 | 1 | 1 | 1 | 1 | - |
+| 16 | - | - | - | - | 1 |
+| 17 | 1 | - | - | - | 1 |
+| 18 | - | 1 | - | - | 1 |
+| 19 | 1 | 1 | - | - | 1 |
 
 ## Reset Circit
 
