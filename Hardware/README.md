@@ -18,9 +18,75 @@ The [W65C22](https://www.westerndesigncenter.com/wdc/documentation/w65c22.pdf) V
 
 As described in part 3 of the control logic section above, the VIA chip is acessed within the `$6000` address block.
 
+```armasm
+lda #$ff                ; Set all pins on port "B" to output
+sta $6002               ; Store to port B on the W65C22
+lda #$e1                ; top 3 pins/last, port "A" to output
+sta $6003               ; Store to port A on the W65C22
+```
+
 ## LCD Screen
 
-The liquid crystal display (LCD) screen module is a Hitachi HD44780 LCD controller is an alphanumeric dot matrix LCD controller developed by Hitachi in the 1980s. The character set of the controller includes ASCII characters, Japanese Kana characters, and some symbols in two 40 character lines.
+The liquid crystal display (LCD) screen module is a Hitachi [HD44780](https://www.sparkfun.com/datasheets/LCD/HD44780.pdf) LCD controller is an alphanumeric dot matrix LCD controller developed by Hitachi in the 1980s. The character set of the controller includes ASCII characters, Japanese Kana characters, and some symbols in two 40 character lines.
+
+```avrasm
+PORTB = $6000               ; W65C22 Register "B"
+PORTA = $6001               ; W65C22 Register "A"
+DDRB  = $6002               ; W65C22 Data Direction Register "B"
+DDRA  = $6003               ; W65C22 Data Direction Register "A"
+EN    = $80                 ; HD44780U LCD Starts data read/write
+RW    = $40                 ; HD44780U LCD Enables Screen to read data
+RS    = $20                 ; HD44780U LCD Registers Select
+
+
+lcd_init:
+    lda #$ff                ; Set all pins on port "B" to output
+    sta DDRB
+    lda #$e1                ; top 3 pins/last, port "A" to output
+    sta DDRA
+    lda #$38                ; 8-bit mode; 2-line display; 5x8 font
+    jsr lcd_config
+    lda #$c                 ; Display on; cursor on; blink off
+    jsr lcd_config
+    lda #$6                 ; Increment and shift cursor
+    jsr lcd_config
+    lda #$11                ; Clear the LCD display
+    jsr lcd_config
+    lda #$2                 ; Send cursor to line 1
+    jsr lcd_config
+loop:
+    jmp loop                ; INIT is now complete
+
+lcd_config:
+    sr lcd_wait             ; Jump to the lcd_wait subroutine
+    sta PORTB
+    lda #0                  ; Clear LCD RS/RW/EN bits
+    sta PORTA
+    lda #EN                 ; Set LCD EN (enable) bit
+    sta PORTA
+    lda #0                  ; Clear LCD RS/RW/EN bits
+    sta PORTA
+    rts                     ; Return from Subroutine
+
+lcd_wait:
+    pha                     ; Push Accumulator to Stack
+    lda #%00000000          ; Set Port B as an input
+    sta DDRB                ; Load the setting to Port "B"
+lcd_busy:
+    lda #RW                 ; Set port to Read/Write
+    sta PORTA               ; Load the setting to Port "A"
+    lda #(RW | EN)          ; Set port to Read/Write & Enable
+    sta PORTA               ; Load the setting to Port "A"
+    lda PORTB               ; Load Accumulator with Port "B"
+    and #%10000000          ; Combine the above with $80
+    bne lcd_busy            ; Jump back to the top of lcd_busy
+    lda #RW                 ; Set port to Read/Write
+    sta PORTA               ; Load the setting to Port "A"
+    lda #%11111111          ; Port B is output
+    sta DDRB                ; Load the setting to Port "B"
+    pla                     ; Pull Accumulator from Stack
+    rts                     ; Return from Subroutine
+```
 
 ## 20-Button Keypad
 
