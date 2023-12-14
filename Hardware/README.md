@@ -30,7 +30,6 @@ When a button is pressed, the chip will set the output as discribed below and se
 
 A Simple map of the keys.
 
-<span style="float:right">
 | W65C22 VIA  | MM74C923   |
 | ----------- | ---------- |
 | PA0 (pin 2) | A (pin 19) |
@@ -38,7 +37,6 @@ A Simple map of the keys.
 | PA2 (pin 4) | C (pin 17) |
 | PA3 (pin 5) | D (pin 16) |
 | PA4 (pin 6) | E (pin 15) |
-</span>
 
 |    | A | B | C | D | E |
 | -- | - | - | - | - | - |
