@@ -28,8 +28,6 @@ For the 20-button keypad we use the [MM74C923](https://mm.digikey.com/Volume0/op
 
 When a button is pressed, the chip will set the output as discribed below and set the `DA` (Data Available) pin, connected to the `CA1` pin on the W65C22, to high.
 
-A Simple map of the keys.
-
 | W65C22 VIA  | MM74C923   |
 | ----------- | ---------- |
 | PA0 (pin 2) | A (pin 19) |
@@ -37,6 +35,8 @@ A Simple map of the keys.
 | PA2 (pin 4) | C (pin 17) |
 | PA3 (pin 5) | D (pin 16) |
 | PA4 (pin 6) | E (pin 15) |
+
+Below is a Simple key map with the left hand column showing the pin id as described above and the top row is the button id pressed.
 
 |   | 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12 | 13 | 14 | 15 | 16 | 17 | 18 | 19 |
 |---|---|---|---|---|---|---|---|---|---|---|----|----|----|----|----|----|----|----|----|----|
