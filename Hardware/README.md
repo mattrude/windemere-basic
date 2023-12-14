@@ -18,7 +18,7 @@ The [W65C22](https://www.westerndesigncenter.com/wdc/documentation/w65c22.pdf) V
 
 As described in part 3 of the control logic section above, the VIA chip is acessed within the `$6000` address block.
 
-```armasm
+```arm
 lda #$ff                ; Set all pins on port "B" to output
 sta $6002               ; Store to port B on the W65C22
 lda #$e1                ; top 3 pins/last, port "A" to output
@@ -30,6 +30,8 @@ sta $6003               ; Store to port A on the W65C22
 The liquid crystal display (LCD) screen module is a Hitachi [HD44780](https://www.sparkfun.com/datasheets/LCD/HD44780.pdf) LCD controller is an alphanumeric dot matrix LCD controller developed by Hitachi in the 1980s. The character set of the controller includes ASCII characters, Japanese Kana characters, and some symbols in two 40 character lines.
 
 ```avrasm
+; To initialize the LCD screen via the W65C22
+
 PORTB = $6000               ; W65C22 Register "B"
 PORTA = $6001               ; W65C22 Register "A"
 DDRB  = $6002               ; W65C22 Data Direction Register "B"
