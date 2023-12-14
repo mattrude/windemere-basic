@@ -32,6 +32,14 @@ A Simple map of the keys.
 
 <table style="float: right;"><thead><tr><th>W65C22 VIA</th><th>MM74C923</th></tr></thead><tbody><tr><td>PA0 (pin 2)</td><td>A (pin 19)</td></tr><tr><td>PA1 (pin 3)</td><td>B (pin 18)</td></tr><tr><td>PA2 (pin 4)</td><td>C (pin 17)</td></tr><tr><td>PA3 (pin 5)</td><td>D (pin 16)</td></tr><tr><td>PA4 (pin 6)</td><td>E (pin 15)</td></tr></tbody></table>
 
+| W65C22 VIA  | MM74C923   |
+| ----------- | ---------- |
+| PA0 (pin 2) | A (pin 19) |
+| PA1 (pin 3) | B (pin 18) |
+| PA2 (pin 4) | C (pin 17) |
+| PA3 (pin 5) | D (pin 16) |
+| PA4 (pin 6) | E (pin 15) |
+
 |    | A | B | C | D | E |
 | -- | - | - | - | - | - |
 |  0 | - | - | - | - | - |
