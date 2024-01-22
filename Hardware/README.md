@@ -60,7 +60,7 @@ loop:
     jmp loop                ; INIT is now complete
 
 lcd_config:
-    sr lcd_wait             ; Jump to the lcd_wait subroutine
+    jsr lcd_wait             ; Jump to the lcd_wait subroutine
     sta PORTB
     lda #0                  ; Clear LCD RS/RW/EN bits
     sta PORTA
