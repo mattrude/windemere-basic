@@ -25807,7 +25807,7 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "http://www.st.com/content/ccc/resource/technical/document/datasheet/41/4f/b3/b0/12/d4/47/88/CD00000444.pdf/files/CD00000444.pdf/jcr:content/translations/en.CD00000444.pdf"
+		(property "Datasheet" "https://www.st.com/content/ccc/resource/technical/document/datasheet/41/4f/b3/b0/12/d4/47/88/CD00000444.pdf/files/CD00000444.pdf/jcr:content/translations/en.CD00000444.pdf"
 			(at 40.64 162.56 0)
 			(effects
 				(font
@@ -25816,7 +25816,7 @@
 				(hide yes)
 			)
 		)
-		(property "Description" ""
+		(property "Description" "5V Positive voltage regulator"
 			(at 40.64 161.29 0)
 			(effects
 				(font
@@ -27356,7 +27356,7 @@
 				(hide yes)
 			)
 		)
-		(property "Description" ""
+		(property "Description" "External Expansion Connector"
 			(at 237.49 127 0)
 			(effects
 				(font
@@ -28106,7 +28106,7 @@
 				(hide yes)
 			)
 		)
-		(property "Description" ""
+		(property "Description" "Keypad Encoder"
 			(at 189.23 151.13 0)
 			(effects
 				(font
