@@ -8,7 +8,7 @@ Before you are able to compile the project's source code, you will need to insta
 
 ### WOZMON
 
-The WASMON firmware was part of the Apple 1 computer that started the Apple computer company.  This is a small program originally living on a 256Kb ROM chip.
+The WOZMON firmware was part of the Apple 1 computer that started the Apple computer company.  This is a small program originally living on a 256Kb ROM chip.
 
 The original Apple 1 did not come with a Reset circuit, which means that the user has to press the RESET button in order to get the machine started. Once you do that a back slash `\` is printed on the screen and the cursor will drop down one line. The cursor position is represented by a flashing `@` symbol.
 
@@ -37,7 +37,7 @@ Once the needed packets are installed, run the below to install vasm & minipro
     cp vasm6502_oldstyle /usr/local/bin/ && \
     cd && rm -rf minipro && git clone https://gitlab.com/DavidGriffith/minipro.git && \
     cd minipro && make && sudo make install && cd && \
-    echo '' && echo "Installion Complete!"
+    echo '' && echo "Installation Complete!"
 
 ## Compiling from Source
 
