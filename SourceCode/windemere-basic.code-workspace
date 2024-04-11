@@ -4,5 +4,15 @@
 			"path": ".."
 		}
 	],
-	"settings": {}
+	"settings": {
+		"cSpell.words": [
+			"DDRA",
+			"DDRB",
+			"EEPROM",
+			"NAND",
+			"PORTA",
+			"PORTB",
+			"WOZMON"
+		]
+	}
 }
